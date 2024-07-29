@@ -1,38 +1,144 @@
-.App {
-  text-align: center;
+/* App.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Container for the app */
+.app-container {
   display: flex;
-  flex-direction: column;
+  height: 100vh; /* Full viewport height */
+}
+
+/* Light Mode */
+.light-mode {
+  background-color: #e0e5ec;
+  color: #333;
+}
+
+/* Dark Mode */
+.dark-mode {
+  background-color: #333;
+  color: #e0e5ec;
+}
+
+/* Sidebar styles */
+.sidebar {
+  width: 250px;
+  background: #e0e5ec;
+  box-shadow: 5px 5px 15px #a3b1c6, -5px -5px 15px #ffffff;
+  border-radius: 20px;
+  padding: 20px;
+  position: fixed; /* Fix the sidebar */
+  height: 100%;
+  top: 0;
+  left: 0;
+  box-sizing: border-box; /* Include padding in width calculation */
+  transition: background 0.3s, color 0.3s; /* Smooth transition */
+}
+
+/* Main content area */
+.main-content {
+  margin-left: 250px; /* Offset for the sidebar */
+  padding: 20px;
+  flex: 1;
+  box-shadow: inset 5px 5px 15px #a3b1c6, inset -5px -5px 15px #ffffff; /* Neumorphic inset shadow */
+  border-radius: 20px; /* Rounded corners for neumorphism */
+  box-sizing: border-box; /* Include padding in width calculation */
+  transition: background 0.3s, color 0.3s; /* Smooth transition */
+}
+
+/* Header styles */
+.header {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background: #e0e5ec; /* Light background for default (light mode) */
+  box-shadow: 5px 5px 15px #a3b1c6, -5px -5px 15px #ffffff; /* Neumorphic shadow */
+  border-radius: 20px; /* Rounded corners */
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  width: calc(100% - 250px); /* Adjust width based on sidebar width */
+  left: 250px; /* Adjust position based on sidebar width */
+  z-index: 1000; /* Ensure it stays on top of other content */
+  box-sizing: border-box; /* Include padding in width calculation */
+  transition: background 0.3s, color 0.3s; /* Smooth transition */
 }
 
-.App-link {
-  color: #61dafb;
+/* Header buttons */
+.header-right button {
+  background: #e0e5ec; /* Light background to match neumorphism */
+  border: none;
+  border-radius: 20px; /* Rounded corners */
+  padding: 10px 20px;
+  margin: 0 10px; /* Space between buttons */
+  font-size: 16px;
+  color: #333; /* Darker text color */
+  box-shadow: 5px 5px 15px #a3b1c6, -5px -5px 15px #ffffff; /* Neumorphic shadow */
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Button hover state */
+.header-right button:hover {
+  background: #dcdfe4; /* Slightly darker background on hover */
+  box-shadow: inset 5px 5px 15px #a3b1c6, inset -5px -5px 15px #ffffff; /* Inset shadow effect on hover */
 }
+
+/* Theme toggle button */
+.theme-toggle {
+  background: #e0e5ec; /* Light background to match neumorphism */
+  border: none;
+  border-radius: 20px; /* Rounded corners */
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #333; /* Darker text color */
+  box-shadow: 5px 5px 15px #a3b1c6, -5px -5px 15px #ffffff; /* Neumorphic shadow */
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Theme toggle button hover state */
+.theme-toggle:hover {
+  background: #dcdfe4; /* Slightly darker background on hover */
+  box-shadow: inset 5px 5px 15px #a3b1c6, inset -5px -5px 15px #ffffff; /* Inset shadow effect on hover */
+}
+
+/* Dark Mode Specific Styles */
+.dark-mode .sidebar {
+  background: #333;
+  box-shadow: 5px 5px 15px #222, -5px -5px 15px #444;
+}
+
+.dark-mode .main-content {
+  background: #333;
+  box-shadow: inset 5px 5px 15px #222, inset -5px -5px 15px #444;
+}
+
+.dark-mode .header {
+  background: #333;
+  
+  box-shadow: 5px 5px 15px #222, -5px -5px 15px #444;
+}
+
+.dark-mode .header-right button,
+.dark-mode .theme-toggle {
+  background: #333;
+  color: #e0e5ec;
+  box-shadow: 5px 5px 15px #222, -5px -5px 15px #444;
+}
+
+.dark-mode .header-right button:hover,
+.dark-mode .theme-toggle:hover {
+  background: #444;
+  box-shadow: inset 5px 5px 15px #222, inset -5px -5px 15px #444;
+}
+
+
+
+
+
+

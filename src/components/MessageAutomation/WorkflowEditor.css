@@ -1,0 +1,33 @@
+/* WorkflowEditor.css */
+
+/* Default (Light Mode) */
+.workflow-editor {
+  background: #e0e5ec; /* Light background for neumorphism */
+  box-shadow: 5px 5px 15px #a3b1c6, -5px -5px 15px #ffffff; /* Neumorphic shadow */
+  border-radius: 20px; /* Rounded corners */
+  padding: 20px;
+}
+
+.workflow-editor h1 {
+  color: #333; /* Darker text color */
+}
+
+.workflow-editor p {
+  color: #555; /* Slightly lighter text color */
+}
+
+/* Dark Mode Specific Styles */
+.dark-mode .workflow-editor {
+  background: #333; /* Dark background */
+  box-shadow: 5px 5px 15px #222, -5px -5px 15px #444; /* Neumorphic shadow for dark mode */
+}
+
+.dark-mode .workflow-editor h1 {
+  color: #e0e5ec; /* Light text color for headings */
+}
+
+.dark-mode .workflow-editor p {
+  color: #ccc; /* Light text color for paragraphs */
+}
+
+

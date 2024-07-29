@@ -1,0 +1,47 @@
+/* Header.css */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #e0e5ec; /* Light background for neumorphism */
+  box-shadow: 5px 5px 15px #a3b1c6, -5px -5px 15px #ffffff; /* Neumorphic shadow */
+  border-radius: 20px; /* Rounded corners */
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  width: calc(100% - 250px); /* Adjust width based on sidebar width */
+  left: 250px; /* Adjust position based on sidebar width */
+  z-index: 1000; /* Ensure it stays on top of other content */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Left section of the header */
+.header-left {
+  font-size: 24px;
+  color: #333; /* Darker text color for better contrast */
+  
+}
+
+/* Right section buttons */
+.header-right button {
+  background: #e0e5ec; /* Light background to match neumorphism */
+  border: none;
+  border-radius: 20px; /* Rounded corners */
+  padding: 10px 20px;
+  margin: 0 10px; /* Space between buttons */
+  font-size: 16px;
+  color: #333; /* Darker text color */
+  box-shadow: 5px 5px 15px #a3b1c6, -5px -5px 15px #ffffff; /* Neumorphic shadow */
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Button hover state */
+.header-right button:hover {
+  background: #dcdfe4; /* Slightly darker background on hover */
+  box-shadow: inset 5px 5px 15px #a3b1c6, inset -5px -5px 15px #ffffff; /* Inset shadow effect on hover */
+}
+
+
+
+

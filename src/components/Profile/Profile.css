@@ -1,0 +1,16 @@
+/* Profile.css */
+.profile {
+  background: #e0e5ec;
+  box-shadow: 5px 5px 15px #a3b1c6, -5px -5px 15px #ffffff;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.profile h1 {
+  color: #333;
+}
+
+.profile p {
+  color: #555;
+}
+
