@@ -1,3 +1,4 @@
+/* KeywordSuggestions.css */
 .keyword-suggestions {
   background: #e0e5ec;
   box-shadow: 5px 5px 15px #a3b1c6, -5px -5px 15px #ffffff;
@@ -5,6 +6,7 @@
   padding: 30px;
   margin: 20px;
   box-sizing: border-box;
+  text-align: center; /* Center-align the content */
 }
 
 /* Dark Mode Specific KeywordSuggestions */
@@ -16,6 +18,7 @@
 /* Heading */
 .keyword-suggestions h1 {
   color: #333;
+  margin-bottom: 20px;
 }
 
 /* Dark Mode Specific KeywordSuggestions Heading */
@@ -33,5 +36,54 @@
   color: #e0e5ec;
 }
 
+/* Input Field */
+.keyword-suggestions input {
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 80%;
+}
 
+/* Button */
+.keyword-suggestions button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.keyword-suggestions button:hover {
+  background-color: #0056b3;
+}
+
+/* Recommendations Container */
+.recommendations {
+  margin-top: 20px;
+  text-align: left; /* Align recommendations to the left */
+}
+
+/* Recommendations Heading */
+.recommendations h2 {
+  color: #333;
+}
+
+/* Dark Mode Specific Recommendations Heading */
+.dark-mode .recommendations h2 {
+  color: #e0e5ec;
+}
+
+/* Recommendations List */
+.recommendations ul {
+  list-style-type: none; /* Remove bullet points */
+  padding: 0; /* Remove default padding */
+}
+
+/* Recommendations List Items */
+.recommendations li {
+  padding: 5px 0; /* Add padding between list items */
+}
 
