@@ -1,5 +1,3 @@
-// analyticsApi.js
-
 // Mock function for fetching data
 export const fetchAnalyticsData = async (timeframe) => {
     // Replace with actual API call
@@ -35,6 +33,14 @@ export const fetchAnalyticsData = async (timeframe) => {
                 { label: 'Oct', value: 105 },
                 { label: 'Nov', value: 65 },
                 { label: 'Dec', value: 85 },
+            ];
+        case 'yearly':
+            return [
+                { label: '2020', value: 1200 },
+                { label: '2021', value: 1400 },
+                { label: '2022', value: 1300 },
+                { label: '2023', value: 1500 },
+                { label: '2024', value: 1600 },
             ];
         default:
             return [];
