@@ -22,10 +22,8 @@ function App() {
     // Apply dark mode based on state
     if (darkMode) {
       document.body.classList.add('dark-mode');
-      document.body.classList.remove('light-mode'); // Ensure light mode is removed
     } else {
-      document.body.classList.add('light-mode'); // Ensure light mode is added
-      document.body.classList.remove('dark-mode'); // Ensure dark mode is removed
+      document.body.classList.remove('dark-mode');
     }
     // Save theme preference to local storage
     localStorage.setItem('dark-mode', darkMode);
@@ -37,7 +35,7 @@ function App() {
 
   return (
     <Router>
-      <div className="app-container">
+      <div className={`app-container ${darkMode ? 'dark-mode' : 'light-mode'}`}>
         <Sidebar />
         <div className="main-content">
           <Header onDarkModeToggle={toggleDarkMode} isDarkMode={darkMode} />
@@ -57,6 +55,7 @@ function App() {
 }
 
 export default App;
+
 
 
 

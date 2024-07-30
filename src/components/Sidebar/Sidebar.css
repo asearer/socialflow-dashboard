@@ -1,53 +1,68 @@
-/* Sidebar.css */
 .sidebar {
   width: 250px;
-  height: 100vh;
-  background: #e0e5ec; /* Light background for neumorphism */
-  box-shadow: 5px 5px 15px #a3b1c6, -5px -5px 15px #ffffff; /* Neumorphic shadow */
-  border-radius: 20px; /* Rounded corners */
+  background: #e0e5ec;
+  box-shadow: 5px 5px 15px #a3b1c6, -5px -5px 15px #ffffff;
+  border-radius: 20px;
   padding: 20px;
   position: fixed;
   top: 0;
   left: 0;
-  box-sizing: border-box; /* Include padding in width calculation */
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* Dark Mode Specific Sidebar */
+.dark-mode .sidebar {
+  background: #333;
+  box-shadow: 5px 5px 15px #222, -5px -5px 15px #444;
 }
 
 /* Heading in the sidebar */
 .sidebar h2 {
   margin: 0;
   font-size: 24px;
-  color: #333; /* Darker text color for better contrast */
-  padding-bottom: 20px; /* Space below heading */
+  color: #333;
+}
+
+/* Dark Mode Specific Sidebar Heading */
+.dark-mode .sidebar h2 {
+  color: #e0e5ec;
 }
 
 /* List in the sidebar */
 .sidebar ul {
   list-style: none;
   padding: 0;
-  margin: 0;
 }
 
 /* List items */
 .sidebar li {
-  padding: 15px; /* Consistent padding */
-  border-radius: 10px; /* Rounded corners for list items */
+  padding: 15px;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background 0.3s ease, box-shadow 0.3s ease;
-  background: #e0e5ec; /* Light background to match neumorphism */
-  box-shadow: inset 5px 5px 15px #a3b1c6, inset -5px -5px 15px #ffffff; /* Neumorphic inset shadow */
-  margin-bottom: 15px; /* Equal spacing between list items */
+  transition: background 0.3s, box-shadow 0.3s;
+  background: #e0e5ec;
+  box-shadow: inset 5px 5px 15px #a3b1c6, inset -5px -5px 15px #ffffff;
 }
 
-/* Remove margin from the last list item */
-.sidebar li:last-child {
-  margin-bottom: 0;
+/* Dark Mode Specific Sidebar List Items */
+.dark-mode .sidebar li {
+  background: #333;
+  box-shadow: inset 5px 5px 15px #222, inset -5px -5px 15px #444;
 }
 
 /* List item hover state */
 .sidebar li:hover {
-  background: #dcdfe4; /* Slightly darker background on hover */
-  box-shadow: inset 5px 5px 15px #a3b1c6, inset -5px -5px 15px #ffffff; /* Inset shadow effect on hover */
+  background: #dcdfe4;
+  box-shadow: inset 5px 5px 15px #a3b1c6, inset -5px -5px 15px #ffffff;
 }
+
+/* Dark Mode Specific Sidebar List Item Hover */
+.dark-mode .sidebar li:hover {
+  background: #444;
+  box-shadow: inset 5px 5px 15px #222, inset -5px -5px 15px #444;
+}
+
 
 
 

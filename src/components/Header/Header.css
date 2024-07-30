@@ -1,46 +1,101 @@
-/* Header.css */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #e0e5ec; /* Light background for neumorphism */
-  box-shadow: 5px 5px 15px #a3b1c6, -5px -5px 15px #ffffff; /* Neumorphic shadow */
-  border-radius: 20px; /* Rounded corners */
+  background: #e0e5ec;
+  box-shadow: 5px 5px 15px #a3b1c6, -5px -5px 15px #ffffff;
+  border-radius: 20px;
   padding: 20px;
   position: fixed;
   top: 0;
-  width: calc(100% - 250px); /* Adjust width based on sidebar width */
-  left: 250px; /* Adjust position based on sidebar width */
-  z-index: 1000; /* Ensure it stays on top of other content */
-  box-sizing: border-box; /* Include padding in width calculation */
+  width: calc(100% - 250px);
+  left: 250px;
+  z-index: 1000;
+  box-sizing: border-box;
 }
 
-/* Left section of the header */
+/* Dark Mode Specific Header */
+.dark-mode .header {
+  background: #333;
+  box-shadow: 5px 5px 15px #222, -5px -5px 15px #444;
+}
+
+/* Header left section */
 .header-left {
   font-size: 24px;
-  color: #333; /* Darker text color for better contrast */
-  
+  color: #333;
 }
 
-/* Right section buttons */
+/* Dark Mode Specific Header Left */
+.dark-mode .header-left {
+  color: #e0e5ec;
+}
+
+/* Header right section buttons */
 .header-right button {
-  background: #e0e5ec; /* Light background to match neumorphism */
+  background: #e0e5ec;
   border: none;
-  border-radius: 20px; /* Rounded corners */
+  border-radius: 20px;
   padding: 10px 20px;
-  margin: 0 10px; /* Space between buttons */
+  margin: 0 10px;
   font-size: 16px;
-  color: #333; /* Darker text color */
-  box-shadow: 5px 5px 15px #a3b1c6, -5px -5px 15px #ffffff; /* Neumorphic shadow */
+  color: #333;
+  box-shadow: 5px 5px 15px #a3b1c6, -5px -5px 15px #ffffff;
   cursor: pointer;
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Dark Mode Specific Header Right Buttons */
+.dark-mode .header-right button {
+  background: #333;
+  color: #e0e5ec;
+  box-shadow: 5px 5px 15px #222, -5px -5px 15px #444;
+}
+
 /* Button hover state */
 .header-right button:hover {
-  background: #dcdfe4; /* Slightly darker background on hover */
-  box-shadow: inset 5px 5px 15px #a3b1c6, inset -5px -5px 15px #ffffff; /* Inset shadow effect on hover */
+  background: #dcdfe4;
+  box-shadow: inset 5px 5px 15px #a3b1c6, inset -5px -5px 15px #ffffff;
 }
+
+/* Dark Mode Specific Header Button Hover */
+.dark-mode .header-right button:hover {
+  background: #444;
+  box-shadow: inset 5px 5px 15px #222, inset -5px -5px 15px #444;
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  background: #e0e5ec;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #333;
+  box-shadow: 5px 5px 15px #a3b1c6, -5px -5px 15px #ffffff;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Dark Mode Specific Theme Toggle Button */
+.dark-mode .theme-toggle {
+  background: #333;
+  color: #e0e5ec;
+  box-shadow: 5px 5px 15px #222, -5px -5px 15px #444;
+}
+
+/* Theme toggle button hover state */
+.theme-toggle:hover {
+  background: #dcdfe4;
+  box-shadow: inset 5px 5px 15px #a3b1c6, inset -5px -5px 15px #ffffff;
+}
+
+/* Dark Mode Specific Theme Toggle Hover */
+.dark-mode .theme-toggle:hover {
+  background: #444;
+  box-shadow: inset 5px 5px 15px #222, inset -5px -5px 15px #444;
+}
+
 
 
 
