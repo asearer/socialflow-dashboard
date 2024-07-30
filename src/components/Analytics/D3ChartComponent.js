@@ -1,87 +1,93 @@
-import React, { useRef, useEffect, useState } from 'react';
+// D3ChartComponent.js
+import React, { useRef, useEffect } from 'react';
 import * as d3 from 'd3';
-import { fetchAnalyticsData } from './analyticsApi'; // Import the function to fetch data
 import './D3ChartComponent.css'; 
 
-const D3ChartComponent = ({ timeframe }) => {
+const D3ChartComponent = ({ data, chartType }) => {
     const svgRef = useRef();
-    const [data, setData] = useState([]);
 
     useEffect(() => {
-        const getData = async () => {
-            try {
-                const result = await fetchAnalyticsData(timeframe);
-                console.log('Fetched Data:', result); // Debugging line
-                setData(result);
-            } catch (error) {
-                console.error('Error fetching data:', error); // Error handling
-            }
-        };
-        getData();
-    }, [timeframe]);
-
-    useEffect(() => {
-        if (data.length === 0) return;
-
         const svg = d3.select(svgRef.current)
-            .attr('width', 600) // Adjusted width for a smaller chart
-            .attr('height', 400); // Adjusted height for a smaller chart
+            .attr('width', 600)
+            .attr('height', 400);
 
-        const barWidth = 60; // Adjusted width of bars for visibility
-        const margin = 20; // Adjusted margin between bars
-        const chartHeight = 300; // Adjusted height for the chart
+        svg.selectAll('*').remove(); // Clear previous content
 
-        // Clear previous content
-        svg.selectAll('*').remove();
+        const margin = { top: 20, right: 30, bottom: 40, left: 40 };
+        const width = svg.attr('width') - margin.left - margin.right;
+        const height = svg.attr('height') - margin.top - margin.bottom;
 
-        // Set the x and y scales
         const xScale = d3.scaleBand()
             .domain(data.map(d => d.label))
-            .range([0, 600])
+            .range([0, width])
             .padding(0.1);
 
         const yScale = d3.scaleLinear()
             .domain([0, d3.max(data, d => d.value)])
-            .nice() // Round the domain to nice values
-            .range([chartHeight, 0]);
+            .nice()
+            .range([height, 0]);
 
-        // Create bars
-        svg.selectAll('rect')
-            .data(data)
-            .enter()
-            .append('rect')
-            .attr('x', d => xScale(d.label))
-            .attr('y', d => yScale(d.value))
-            .attr('width', xScale.bandwidth())
-            .attr('height', d => chartHeight - yScale(d.value))
-            .attr('fill', 'steelblue');
+        const g = svg.append('g')
+            .attr('transform', `translate(${margin.left},${margin.top})`);
 
-        // Add text labels
-        svg.selectAll('text')
-            .data(data)
-            .enter()
-            .append('text')
-            .attr('x', d => xScale(d.label) + xScale.bandwidth() / 2)
-            .attr('y', d => yScale(d.value) - 5) // Adjusted to fit better
-            .attr('text-anchor', 'middle')
-            .attr('font-size', '12px') // Adjust font size for smaller text
-            .text(d => d.value);
+        if (chartType === 'bar') {
+            g.selectAll('.bar')
+                .data(data)
+                .enter().append('rect')
+                .attr('class', 'bar')
+                .attr('x', d => xScale(d.label))
+                .attr('y', d => yScale(d.value))
+                .attr('width', xScale.bandwidth())
+                .attr('height', d => height - yScale(d.value))
+                .attr('fill', 'steelblue');
 
-        // Add x-axis
-        svg.append('g')
-            .attr('transform', `translate(0,${chartHeight})`)
+            g.selectAll('.text')
+                .data(data)
+                .enter().append('text')
+                .attr('x', d => xScale(d.label) + xScale.bandwidth() / 2)
+                .attr('y', d => yScale(d.value) - 5)
+                .attr('text-anchor', 'middle')
+                .text(d => d.value);
+        } else if (chartType === 'line') {
+            const line = d3.line()
+                .x(d => xScale(d.label) + xScale.bandwidth() / 2)
+                .y(d => yScale(d.value));
+
+            g.append('path')
+                .data([data])
+                .attr('class', 'line')
+                .attr('d', line)
+                .attr('fill', 'none')
+                .attr('stroke', 'steelblue')
+                .attr('stroke-width', 2);
+
+            g.selectAll('.dot')
+                .data(data)
+                .enter().append('circle')
+                .attr('class', 'dot')
+                .attr('cx', d => xScale(d.label) + xScale.bandwidth() / 2)
+                .attr('cy', d => yScale(d.value))
+                .attr('r', 5)
+                .attr('fill', 'steelblue');
+        }
+
+        // X axis
+        g.append('g')
+            .attr('class', 'x-axis')
+            .attr('transform', `translate(0,${height})`)
             .call(d3.axisBottom(xScale));
 
-        // Add y-axis
-        svg.append('g')
+        // Y axis
+        g.append('g')
+            .attr('class', 'y-axis')
             .call(d3.axisLeft(yScale));
-
-    }, [data]);
+    }, [data, chartType]);
 
     return <svg ref={svgRef}></svg>;
 };
 
 export default D3ChartComponent;
+
 
 
 
