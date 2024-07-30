@@ -1,3 +1,4 @@
+/* AnalyticsDashboard.css */
 .analytics-dashboard {
   background: #e0e5ec;
   box-shadow: 5px 5px 15px #a3b1c6, -5px -5px 15px #ffffff;
@@ -5,33 +6,51 @@
   padding: 30px;
   margin: 20px;
   box-sizing: border-box;
+  text-align: center; /* Center-align the content */
 }
 
-/* Dark Mode Specific AnalyticsDashboard */
 .dark-mode .analytics-dashboard {
   background: #333;
   box-shadow: 5px 5px 15px #222, -5px -5px 15px #444;
 }
 
-/* Heading */
 .analytics-dashboard h1 {
   color: #333;
+  margin-bottom: 20px;
+  font-size: 1.5em; /* Adjust font size if needed */
 }
 
-/* Dark Mode Specific AnalyticsDashboard Heading */
 .dark-mode .analytics-dashboard h1 {
   color: #e0e5ec;
 }
 
-/* Paragraph text */
 .analytics-dashboard p {
   color: #555;
+  font-size: 1.1em; /* Adjust font size if needed */
 }
 
-/* Dark Mode Specific AnalyticsDashboard Paragraph */
 .dark-mode .analytics-dashboard p {
   color: #e0e5ec;
 }
+
+/* Custom styles for FontAwesome icon */
+.analytics-dashboard .fa-chart-line {
+  font-size: 25px; /* Adjust the size as needed */
+  vertical-align: middle; /* Align icon with text */
+  margin-right: 10px; /* Space between icon and text */
+}
+
+/* Optional: Style for the D3 chart */
+.analytics-dashboard svg {
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 100%; /* Make the chart responsive */
+  max-width: 800px; /* Limit the max width */
+  height: auto; /* Maintain aspect ratio */
+}
+
+
 
 
 

@@ -20,18 +20,7 @@
   box-shadow: 5px 5px 15px #222, -5px -5px 15px #444;
 }
 
-/* Header left section */
-.header-left {
-  font-size: 24px;
-  color: #333;
-}
-
-/* Dark Mode Specific Header Left */
-.dark-mode .header-left {
-  color: #e0e5ec;
-}
-
-/* Header right section buttons */
+/* Header buttons */
 .header-right button {
   background: #e0e5ec;
   border: none;
@@ -45,7 +34,7 @@
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Dark Mode Specific Header Right Buttons */
+/* Dark Mode Specific Header Buttons */
 .dark-mode .header-right button {
   background: #333;
   color: #e0e5ec;
@@ -58,7 +47,7 @@
   box-shadow: inset 5px 5px 15px #a3b1c6, inset -5px -5px 15px #ffffff;
 }
 
-/* Dark Mode Specific Header Button Hover */
+/* Dark Mode Specific Header Button Hover State */
 .dark-mode .header-right button:hover {
   background: #444;
   box-shadow: inset 5px 5px 15px #222, inset -5px -5px 15px #444;
@@ -90,11 +79,12 @@
   box-shadow: inset 5px 5px 15px #a3b1c6, inset -5px -5px 15px #ffffff;
 }
 
-/* Dark Mode Specific Theme Toggle Hover */
+/* Dark Mode Specific Theme Toggle Button Hover State */
 .dark-mode .theme-toggle:hover {
   background: #444;
   box-shadow: inset 5px 5px 15px #222, inset -5px -5px 15px #444;
 }
+
 
 
 

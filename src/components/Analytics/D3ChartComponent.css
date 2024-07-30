@@ -1,0 +1,9 @@
+.chart-icon {
+    font-size: 20px; /* Adjusted size of the chart icon */
+    color: #333; /* Adjust color if needed */
+    margin-bottom: 10px; /* Space between icon and chart */
+}
+
+.chart-container {
+    text-align: center; /* Center align the chart and icon if necessary */
+}

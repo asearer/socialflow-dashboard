@@ -1,16 +1,36 @@
-/* Help.css */
 .help {
   background: #e0e5ec;
   box-shadow: 5px 5px 15px #a3b1c6, -5px -5px 15px #ffffff;
   border-radius: 20px;
-  padding: 20px;
+  padding: 30px;
+  margin: 20px;
+  box-sizing: border-box;
 }
 
+/* Dark Mode Specific Help */
+.dark-mode .help {
+  background: #333;
+  box-shadow: 5px 5px 15px #222, -5px -5px 15px #444;
+}
+
+/* Heading */
 .help h1 {
   color: #333;
 }
 
+/* Dark Mode Specific Help Heading */
+.dark-mode .help h1 {
+  color: #e0e5ec;
+}
+
+/* Paragraph text */
 .help p {
   color: #555;
 }
+
+/* Dark Mode Specific Help Paragraph */
+.dark-mode .help p {
+  color: #e0e5ec;
+}
+
 

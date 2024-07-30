@@ -1,16 +1,45 @@
-/* Profile.css */
 .profile {
   background: #e0e5ec;
   box-shadow: 5px 5px 15px #a3b1c6, -5px -5px 15px #ffffff;
   border-radius: 20px;
-  padding: 20px;
+  padding: 30px;
+  margin: 20px;
+  box-sizing: border-box;
 }
 
+/* Dark Mode Specific Profile */
+.dark-mode .profile {
+  background: #333;
+  box-shadow: 5px 5px 15px #222, -5px -5px 15px #444;
+}
+
+/* Heading */
 .profile h1 {
   color: #333;
 }
 
+/* Dark Mode Specific Profile Heading */
+.dark-mode .profile h1 {
+  color: #e0e5ec;
+}
+
+/* Paragraph text */
 .profile p {
   color: #555;
 }
+
+/* Dark Mode Specific Profile Paragraph */
+.dark-mode .profile p {
+  color: #e0e5ec;
+}
+
+.close-btn {
+  position: relative;
+  top: 20px;
+  right: 10px;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+}
+
 
